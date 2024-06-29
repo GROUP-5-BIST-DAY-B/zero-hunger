@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        .product-item {
+            margin: 5px 0;
+        }
+        #no-results {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-item" data-name="maize">Maize</div>
+    <div class="product-item" data-name="beans">Beans</div>
+    <div class="product-item" data-name="rice">Rice</div>
+    <div class="product-item" data-name="cassava">Cassava</div>
+
+    <div id="no-results">No results found</div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function searchProducts() {
+            const query = getQueryParam('search');
+            const items = document.querySelectorAll('.product-item');
+            let hasResults = false;
+
+            items.forEach(item => {
+                const name = item.getAttribute('data-name');
+                if (name.includes(query)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', searchProducts);
+    </script>
+</body>
+</html>

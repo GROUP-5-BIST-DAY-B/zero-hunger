@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now - Zero Hunger Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .donation-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .donation-options button {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+        .donation-options button:hover {
+            background: #e0e0e0;
+        }
+        .custom-amount {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-back {
+            background: #ccc;
+            color: white;
+        }
+        .btn-submit {
+            background: #28a745;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .donation-options {
+                flex-direction: column;
+            }
+            .donation-options button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .btn-container {
+                flex-direction: column;
+            }
+            .btn-container button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-button">
+        <button onclick="window.location.href='hunger.html';" style="font-size: 18px; padding: 10px 20px;">Back</button>
+    &nbsp
+<div class="container">
+    <h1>Donate to Zero Hunger Project</h1>
+    <p>Your donation can make a difference. Choose an amount to donate:</p>
+    
+    <div class="donation-options">
+        <button data-amount="5,000">UGX.5,000</button>
+        <button data-amount="10,000">UGX.10,000</button>
+        <button data-amount="50,000">UGX.50,000</button>
+        <button data-amount="100,000">UGX.100,000</button>
+    </div>
+
+    <div class="custom-amount">
+        <label for="customAmount">Or enter a custom amount:</label>
+        <input type="number" id="customAmount" placeholder="Enter amount">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Your Name">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" placeholder="Your Email">
+    </div>
+
+    <div class="form-group">
+        <label for="creditCard">Credit Card Number:</label>
+        <input type="text" id="creditCard" placeholder="Credit Card Number">
+    </div>
+     <div class="btn-container">
+        <button class="btn-back" onclick="goBack()">Back</button>
+        <button class="btn-submit" onclick="submitDonation()">Donate</button>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle donation amount selection and form submission
+    document.querySelectorAll('.donation-options button').forEach(button => {
+        button.addEventListener('click', () => {
+            document.getElementById('customAmount').value = button.getAttribute('data-amount');
+        });
+    });
+
+    function goBack() {
+        window.history.back();
+    }
+
+    function submitDonation() {
+        const amount = document.getElementById('customAmount').value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const creditCard = document.getElementById('creditCard').value;
+
+
+        if (!amount || !name || !email || !creditCard) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        alert(Thank you for your donation of UGX.UGX{amount}, ${name}!);
+        // Here you would typically send the data to your server
+    }
+</script>
+</body>
+</html>

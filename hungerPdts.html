@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            border:25px;
+        border-radius: 25px;
+        border: 1px solid;
+        background-color: Lightblue;
+
+        }
+        header, nav, section, footer {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 50px; 
+             
+        }
+        nav {
+            background-color: black;
+            text-align: center;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: larger;
+                   
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-item p {
+            margin: 5px 0;
+        }
+        .product-item button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .product-item button:hover {
+            background-color: #45a049;
+        }
+        .cart, .order-form {
+            margin-top: 20px;
+        }
+        .order-form input, .order-form select {
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+        }
+        .search-bar {
+            width: 50%;
+            padding:30px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .image-container {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+    
+    <div class="back-button">
+        <button onclick="window.location.href='hunger.html';" style="font-size: 18px; padding: 10px 20px;">Back</button>
+        <input type="text" id="search-bar" placeholder="Search for products.." style="width: 1000px; height: 80px;">
+<button onclick="searchFood()" style="font-size: 16px; padding: 10px 20px;">Search</button>
+
+    </div>
+    
+ 
+    <nav>
+        <a href="#agricultural-products">Agricultural Products</a>
+        <a href="#agricultural-equipment">Agricultural Equipment</a>
+        <a href="#nutritional-supplements">Nutritional Supplements</a>
+        <a href="#educational-materials">Educational Materials</a>
+    </nav>
+
+    <!-- Agricultural Products Section -->
+    <section id="agricultural-products">
+        <div class="section-title" style="text-align: center; font-weight: bold;">Agricultural Products</div>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="Maize.jpg" style="width: 210px; height: 210px; object-fit: cover;" alt="Maize">
+                <p>Name: Maize</p>
+                <p>Price: 1000 UGX</p>
+                <button onclick="addToCart('Maize', 1000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="beans.jpg"style="width: 210px; height: 210px; object-fit: cover; alt="Beans">
+                <p>Name: Beans</p>
+                <p>Price: 2000 UGX</p>
+                <button onclick="addToCart('Beans', 2000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="rice.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Rice">
+                <p>Name: Rice</p>
+                <p>Price: 5500 UGX</p>
+                <button onclick="addToCart('Rice', 5500)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="cassava.jpg"style="width: 210px; height: 210px; object-fit: cover; alt="Cassava">
+                <p>Name: Cassava</p>
+                <p>Price: 8500 UGX</p>
+                <button onclick="addToCart('Cassava', 8500)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="wheat.jpg" style="width:210px; height: 210px; object-fit: cover; alt="Wheat">
+                <p>Name: Wheat</p>
+                <p>Price: 4599 UGX</p>
+                <button onclick="addToCart('Wheat', 4599)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="potatoes.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Potatoes">
+                <p>Name: Potatoes</p>
+                <p>Price: 5990 UGX</p>
+                <button onclick="addToCart('Potatoes', 5990)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="apples.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Apples">
+                <p>Name: Apples</p>
+                <p>Price: 2670 UGX</p>
+                <button onclick="addToCart('Apples', 2670)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="onions.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Onions">
+                <p>Name: Onions</p>
+                <p>Price: 1950 UGX</p>
+                <button onclick="addToCart('Onions', 1950)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="tomatoes.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="tomatoes">
+                <p>Name: Tomatoes</p>
+                <p>Price: 2120 UGX</p>
+                <button onclick="addToCart('Tomatoes', 2120)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="Soyabeans.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Soyabeans">
+                <p>Name: Soyabeans</p>
+                <p>Price: 2590 UGX</p>
+                <button onclick="addToCart('Soyabean', 2590)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agricultural Equipment Section -->
+    <section id="agricultural-equipment">
+        <div class="section-title" style="text-align: center; font-weight:bold">Agricultural Equipment</div>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="tractor.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Tractor">
+                <p>Name: Tractor</p>
+                <p>Price: 5000000 UGX</p>
+                <button onclick="addToCart('Tractor', 5000000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="plows.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Plow">
+                <p>Name: Plow</p>
+                <p>Price: 800000 UGX</p>
+                <button onclick="addToCart('Plow', 800000)">Add to Cart</button>
+            </div><div class="product-item">
+                <img src="harvestor.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="harvesters">
+                <p>Name: Harvesters</p>
+                <p>Price: 1500000 UGX</p>
+                <button onclick="addToCart('Harvesters', 1500000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="irrigation systems.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Irrigation Systems">
+                <p>Name: Irrigation Systems</p>
+                <p>Price: 1200000 UGX</p>
+                <button onclick="addToCart('Irrigation Systems', 1200000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="seed drills.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Seed drills">
+                <p>Name: Seed drills</p>
+                <p>Price: 805000 UGX</p>
+                <button onclick="addToCart('Seed drills', 805000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="fertilizer spreader.jpg"  style="width: 210px; height: 210px; object-fit: cover;alt="Fertilizer spreader">
+                <p>Name: Fertilizer spreader</p>
+                <p>Price: 885600 UGX</p>
+                <button onclick="addToCart('Fertilizer spreader', 885600)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="crop duster.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Crop duster">
+                <p>Name: Crop dusters</p>
+                <p>Price: 1050000 UGX</p>
+                <button onclick="addToCart('Crop duster', 10500000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="greenhouse.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Greenhouse">
+                <p>Name: Greenhouse</p>
+                <p>Price: 2000000 UGX</p>
+                <button onclick="addToCart('Greenhouse', 2000000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="Grain storage silos.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Grain Storage silos">
+                <p>Name: Grain Storage silos</p>
+                <p>Price: 12000000 UGX</p>
+                <button onclick="addToCart('Grain Storage silos', 1800000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="livestock handling equipment.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="livestock equipment">
+                <p>Name:livestock handling equipment</p>
+                <p>Price: 1000000 UGX</p>
+                <button onclick="addToCart('Livestock handling equipment', 1000000)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutritional Supplements Section -->
+    <section id="nutritional-supplements">
+        <div class="section-title" style="text-align: center; font-weight:bold;">Nutritional Supplements</div>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="vitamin c.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Vitamin C">
+                <p>Name: Vitamin C</p>
+                <p>Price: 10000 UGX</p>
+                <button onclick="addToCart('Vitamin C', 10000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="zinc.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Zinc">
+                <p>Name: Zinc</p>
+                <p>Price: 15000 UGX</p>
+                <button onclick="addToCart('Zinc', 15000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="iron.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Iron Supplements">
+                <p>Name: Iron Supplements</p>
+                <p>Price: 48500 UGX</p>
+                <button onclick="addToCart('Iron Supplements', 48500)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="calcium.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Calcium Supplements">
+                <p>Name: Calcium Supplements</p>
+                <p>Price: 65000 UGX</p>
+                <button onclick="addToCart('Calcium Supplements', 65000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="probiotics.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="probiotics">
+                <p>Name: Probiotics C</p>
+                <p>Price: 56700 UGX</p>
+                <button onclick="addToCart('Probiotics', 56700)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="herb.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Herbal Supplements">
+                <p>Name: Herbal Supplements</p>
+                <p>Price: 23545 UGX</p>
+                <button onclick="addToCart('Herbal Supplements', 23545)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="fiber.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Fiber Supplements">
+                <p>Name: Fiber Supplements</p>
+                <p>Price: 100000 UGX</p>
+                <button onclick="addToCart('Fiber Supplements', 100000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="omega 3.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Omega-3 fatty acids">
+                <p>Name: Omega-3 fatty acids</p>
+                <p>Price: 75000 UGX</p>
+                <button onclick="addToCart('Omega-3 fatty acids', 75000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="multivitamin.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Multivitamins">
+                <p>Name: Multivitamins</p>
+                <p>Price: 120000 UGX</p>
+                <button onclick="addToCart('Multivitamins', 120000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="protein powder.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Protein powder">
+                <p>Name: Protein powder</p>
+                <p>Price: 115000 UGX</p>
+                <button onclick="addToCart('Protein powder', 115000)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Materials Section -->
+    <section id="educational-materials">
+        <div class="section-title" style="text-align: center; font-weight:bold">Educational Materials</div>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="farm modules.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Farming Guide">
+                <p>Name: Farming Guide</p>
+                <p>Price: 5000 UGX</p>
+                <button onclick="addToCart('Farming Guide', 5000)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="health tips.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Health Tips">
+                <p>Name: Health Tips</p>
+                <p>Price: 3000 UGX</p>
+                <button onclick="addToCart('Health Tips', 3000)">Add to Cart</button>
+           </div>
+           <div class="product-item">
+            <img src="nutrition guide.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Nutrition guides">
+            <p>Name: Nutrition guide</p>
+            <p>Price: 12300 UGX</p>
+            <button onclick="addToCart('Nutrition guide', 12300)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="agric textbook.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Agriculture textbook">
+            <p>Name: Agriculture textbook</p>
+            <p>Price: 35000 UGX</p>
+            <button onclick="addToCart('Agriculture textbook', 35000)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="sustainable farming.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Sustainable farming practices guide">
+            <p>Name: Sustainable farming practices guide</p>
+            <p>Price: 16700 UGX</p>
+            <button onclick="addToCart('Sustainable farming practices guide', 16700)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="food security.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Webinars on Food security">
+            <p>Name: Webinars on Food security</p>
+            <p>Price: 19890 UGX</p>
+            <button onclick="addToCart('Webinars on Food security', 19890)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="policy belifs.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Policy briefs on hunger and poverty">
+            <p>Name: Policy briefs on hunger and poverty</p>
+            <p>Price: 12000 UGX</p>
+            <button onclick="addToCart('Policy briefs on hunger and poverty', 12000)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="educational video.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Zinc">
+            <p>Name: Educational videos on farming techniques</p>
+            <p>Price: 17000 UGX</p>
+            <button onclick="addToCart('Educational videos on farming techniques', 17000)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="infographics on global food issues.jpg" style="width: 210px; height: 210px; object-fit: cover; alt="Vitamin C">
+            <p>Name: Infographics on global food issues</p>
+            <p>Price: 8500 UGX</p>
+            <button onclick="addToCart('Infographics on global food issues', 8500)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="online farming.jpg" style="width: 210px;height: 210px; object-fit: cover; alt="Online courses on agriculture">
+            <p>Name: Online courses on agriculture</p>
+            <p>Price: 15000 UGX</p>
+            <button onclick="addToCart('Online courses on agriculture', 15000)">Add to Cart</button>
+        </div>
+       </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart">
+        <div class="section-title">Cart</div>
+        <div id="cart-items"></div>
+        <div>Total: <span id="total-price">0</span> UGX</div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-form">
+        <div class="section-title">Place Order</div>
+        <form id="order-form" onsubmit="placeOrder(event)">
+            <label for="address">Delivery Address:</label>
+            <input type="text" id="address" name="address" required>
+            
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="Mobile-Money">Mobile Money</option>
+                <option value="Credit-Card">Credit Card</option>
+                <option value="Debit-Card">Credit Card</option>
+            </select>
+            
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <script>
+        let cart = [];
+        const registered = true;  // Simulating user registration status
+
+        function addToCart(name, price) {
+            if (!registered) {
+                alert("You must be registered to make a purchase.");
+                return;
+            }
+            cart.push({name, price});
+            displayCart();
+        }
+
+        function displayCart() {
+            let cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                cartItems.innerHTML += <p>${item.name} - ${item.price} UGX</p>;
+                total += item.price;
+            });
+            document.getElementById('total-price').innerText = total;
+        }
+
+        function placeOrder(event) {
+            event.preventDefault();
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+            let address = document.getElementById('address').value;
+            let paymentMethod = document.getElementById('payment-method').value;
+
+            // Simulate order placement
+            let success = Math.random() > 0.5;
+            if (success) {
+                alert("Order placed successfully! Thank you.");
+                cart = [];
+                displayCart();
+                document.getElementById('order-form').reset();
+            } else {
+                alert("Failed to place the order. Please try again.");
+            }
+        }
+        function searchFood() {
+  const query = document.getElementById('search-bar').value.toLowerCase().trim();
+  if (query) {
+    window.location.href = searchPdtBtn.html?search=${encodeURIComponent(query)};
+  }
+}
+
+  </script>
+</body>
+</html>

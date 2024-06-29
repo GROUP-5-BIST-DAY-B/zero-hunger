@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Hunger Project</title>
+    <style>
+        /* Basic styling for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-button">
+        <button onclick="window.location.href='hunger.html';" style="font-size: 18px; padding: 10px 20px;">Back</button>
+
+
+<h1>Zero Hunger Project</h1>
+<p>Join us in our mission to eliminate hunger worldwide. <button id="learnMoreBtn">Learn More</button></p>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>About the Zero Hunger Project</h2>
+        <p>The Zero Hunger project is a global initiative aimed at ending hunger, achieving food security, improving nutrition, and promoting sustainable agriculture by 2030. This ambitious goal is part of the United Nations Sustainable Development Goals (SDGs).</p>
+
+        <h2>Recent News</h2>
+        <p><strong>June 2024:</strong> A major breakthrough in agricultural technology has been achieved, significantly increasing crop yields in developing countries.</p>
+        <p><strong>May 2024:</strong> A new partnership between global NGOs and local governments aims to distribute food more efficiently to areas affected by famine.</p>
+
+        <h2>Educational Information</h2>
+        <p>Hunger affects millions of people worldwide, particularly in developing countries. Malnutrition can lead to severe health problems, stunted growth in children, and increased mortality rates. Efforts to combat hunger include improving agricultural practices, investing in infrastructure, and supporting small-scale farmers.</p>
+
+        <h2>Ongoing Steps to Eliminate Hunger</h2>
+        <p>1. Developing drought-resistant crop varieties to ensure food security in regions affected by climate change.</p>
+        <p>2. Implementing food distribution programs that target the most vulnerable populations.</p>
+        <p>3. Promoting sustainable farming practices to maintain the health of the soil and environment.</p>
+        <p>4. Educating communities about nutrition and providing resources for healthy eating.</p>
+        <p>5. Encouraging international cooperation to address global food supply challenges.</p>
+    </div>
+</div>
+
+<script>
+    // Get modal elements
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("learnMoreBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

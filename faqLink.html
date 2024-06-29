@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .footer {
+            background-color: #f8f8f8;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #faqContent {
+            display: none;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="footer">
+        <a href="#" id="faqLink">FAQ click here</a>
+        <div id="faqContent">
+            <h2>Frequently Asked Questions</h2>
+            <p>Here are answers to some common questions about our organization and the Zero Hunger Project:</p>
+            <ul>
+                <li>What is the mission of the Zero Hunger Project?</li>
+                <li>How can I donate to support the Zero Hunger Project?</li>
+                <li>Where can I find more information about volunteer opportunities?</li>
+            </ul>
+          <p>Thank you for visting us</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('faqLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('faqContent').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>

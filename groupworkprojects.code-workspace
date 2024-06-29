@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../myprojects"
+		},
+		{
+			"path": "../kosmos"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "kosmos",
+		"git.ignoreLimitWarning": true
+	},
+	"extensions": {
+		"recommendations": [
+			"ritwickdey.liveserver"
+		]
+	}
+}

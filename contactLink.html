@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .footer {
+            background-color: #f8f8f8;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #contactContent {
+            display: none;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="footer">
+        <a href="#" id="contactLink">Contact Us click here</a>
+        <div id="contactContent">
+            <h2>Contact Us</h2>
+            <p>For inquiries, feedback, or support, please reach out to us using the contact information below:</p>
+            <ul>
+                <li>Email: info@zerohungerproject.com</li>
+                <li>Phone: +256 774047533</li>
+                <li>Address: Makerere University P.O BOX 7062 Kampala Uganda.</li>
+            </ul>
+            <p>We strive to respond to all inquiries promptly.</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('contactContent').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>

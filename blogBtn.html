@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Hunger Project - Blog</title>
+    <style>
+        /* Basic styling for the modal and content */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-button">
+        <button onclick="window.location.href='hunger.html';" style="font-size: 18px; padding: 10px 20px;">Back</button>
+<h1>Zero Hunger Project</h1>
+<p>Read our latest blog posts. <button id="blogBtn">Blog</button></p>
+
+<!-- Blog Modal Structure -->
+<div id="blogModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Zero Hunger Blog</h2>
+        <div id="blogContent">
+            <div>
+                <h3>Innovative Solutions to Combat Hunger</h3>
+                <p>Discover how technology and innovation are being used to tackle hunger around the world. From mobile apps for farmers to advanced irrigation techniques, learn about the cutting-edge solutions making a difference.</p>
+                <p><a href="#">Read more...</a></p>
+            </div>
+            <div>
+                <h3>Community Success Stories</h3>
+                <p>Hear directly from communities that have successfully implemented programs to reduce hunger and improve food security. These stories highlight the power of local initiatives and collective action.</p>
+                <p><a href="#">Read more...</a></p>
+            </div>
+            <div>
+                <h3>Policy and Advocacy</h3>
+                <p>Understand the role of policy and advocacy in the fight against hunger. Learn about recent policy changes, advocacy efforts, and how you can get involved in pushing for systemic change.</p>
+                <p><a href="#">Read more...</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get modal elements
+    var blogModal = document.getElementById("blogModal");
+    var blogBtn = document.getElementById("blogBtn");
+    var blogSpan = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    blogBtn.onclick = function() {
+        blogModal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    blogSpan.onclick = function() {
+        blogModal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == blogModal) {
+            blogModal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

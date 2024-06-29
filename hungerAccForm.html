@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 500px;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        .forgot-password {
+            display: none;
+            margin-top: 10px;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign In</h2>
+        <input type="name" id="name" placeholder="Name" style="width: 95%; padding: 10px; margin-top: 10px;">
+        <input type="email" id="email" placeholder="Email" style="width: 95%; padding: 10px; margin-top: 10px;">
+        <input type="password" id="password" placeholder="Password" style="width: 95%; padding: 10px; margin-top: 10px;">
+        <button class="button" onclick="signIn()">Sign In</button>
+        <button class="button" onclick="showForgotPassword()">Forgot Password</button>
+        
+        <div class="forgot-password" id="forgotPassword">
+            <h3>Reset Password</h3>
+            <input type="email" placeholder="Enter your email" style="width: 100%; padding: 10px; margin-top: 10px;">
+            <button class="button">Submit</button>
+        </div>
+        
+        <div id="message" class="message"></div>
+        
+    </div>
+ 
+    
+    <script>
+        function showForgotPassword() {
+            document.getElementById('forgotPassword').style.display = 'block';
+        }
+
+        function signIn() {
+            const name =document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+
+            const correctEmail = "stuartsegane@gmail.com";
+            const correctPassword = "password123";
+
+            if (email === correctEmail && password === correctPassword) {
+                messageDiv.textContent = "Login successful! You now have an account with us.";
+                messageDiv.className = "message success";
+            } else {
+                messageDiv.textContent = "Login failed! Please check your credentials.";
+                messageDiv.className = "message error";
+            }
+        }
+    </script>
+</body>
+</html>
