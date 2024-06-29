@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Hunger Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .back-button {
+            display: none;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <div class="container">
+
+        
+        <button id="searchButton">Search</button>
+        <button id="backButton" class="back-button">Back</button>
+        <div id="prompt" class="content">
+            <p>Select a category to learn more:</p>
+            <ul>
+                <li><a href="#" data-page="news">News about Zero Hunger Project</a></li>
+                <li><a href="#" data-page="products">Products</a></li>
+                <li><a href="donateNow.html" data-page="donate">Donate</a></li>
+            </ul>
+        </div>
+        <div id="news" class="content">
+            <h2>News about Zero Hunger Project</h2>
+            <p>Here you can find the latest news about the Zero Hunger Project...</p>
+            <a href="learnMore.html" class="btn">Learn More</a>
+        </div>
+        <div id="products" class="content">
+            <h2>Products</h2>
+            <p>Here you can find products related to the Zero Hunger Project...</p>
+            <a href="hungerPdts.html">Products</a>
+        </div>
+        <div id="donate" class="content">
+            <h2>Donate</h2>
+            <p>Here you can make a donation to support the Zero Hunger Project...</p>
+            <a href="donateNow.html" class="btn">Donate Now</a>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            document.getElementById('prompt').style.display = 'block';
+            document.getElementById('searchButton').style.display = 'none';
+            document.getElementById('backButton').style.display = 'inline-block';
+        });
+
+        document.querySelectorAll('#prompt a').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var pageId = this.getAttribute('data-page');
+                document.getElementById('prompt').style.display = 'none';
+                document.querySelectorAll('.content').forEach(function(content) {
+                    content.style.display = 'none';
+                });
+                document.getElementById(pageId).style.display = 'block';
+                document.getElementById('backButton').style.display = 'inline-block';
+            });
+        });
+
+        document.getElementById('backButton').addEventListener('click', function() {
+            document.querySelectorAll('.content').forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById('prompt').style.display = 'block';
+            this.style.display = 'none';
+            document.getElementById('searchButton').style.display = 'inline-block';
+        });
+    </script>
+</body>
+</html>
